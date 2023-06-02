@@ -1,0 +1,12 @@
+--- SENDING A GET 
+cat docs/get.txt | nc 127.0.0.1 8000
+curl 127.0.0.1:8000
+
+--- SENDING A POST 
+cat docs/post.txt | nc 127.0.0.1 8000
+
+--- POSTING A BIG FILE
+curl -d @alice_in_wonderland.txt 127.0.0.1:8000
+
+----- SIEGE
+siege -c200 -r100 127.0.0.1:8000
